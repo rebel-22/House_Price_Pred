@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🏠 House Price Predictor</h1>
+        <form method="POST" action="/predict">
+            <div class="form-group">
+                <label for="CRIM">CRIM</label>
+                <input type="text" name="CRIM" id="CRIM" required>
+            </div>
+            <div class="form-group">
+                <label for="ZN">ZN</label>
+                <input type="text" name="ZN" id="ZN" required>
+            </div>
+            <div class="form-group">
+                <label for="INDUS">INDUS</label>
+                <input type="text" name="INDUS" id="INDUS" required>
+            </div>
+            <div class="form-group">
+                <label for="CHAS">CHAS</label>
+                <input type="text" name="CHAS" id="CHAS" required>
+            </div>
+            <div class="form-group">
+                <label for="NOX">NOX</label>
+                <input type="text" name="NOX" id="NOX" required>
+            </div>
+            <div class="form-group">
+                <label for="RM">RM</label>
+                <input type="text" name="RM" id="RM" required>
+            </div>
+            <div class="form-group">
+                <label for="AGE">AGE</label>
+                <input type="text" name="AGE" id="AGE" required>
+            </div>
+            <div class="form-group">
+                <label for="DIS">DIS</label>
+                <input type="text" name="DIS" id="DIS" required>
+            </div>
+            <div class="form-group">
+                <label for="RAD">RAD</label>
+                <input type="text" name="RAD" id="RAD" required>
+            </div>
+            <div class="form-group">
+                <label for="TAX">TAX</label>
+                <input type="text" name="TAX" id="TAX" required>
+            </div>
+            <div class="form-group">
+                <label for="PTRATIO">PTRATIO</label>
+                <input type="text" name="PTRATIO" id="PTRATIO" required>
+            </div>
+            <div class="form-group">
+                <label for="B">B</label>
+                <input type="text" name="B" id="B" required>
+            </div>
+            <div class="form-group">
+                <label for="LSTAT">LSTAT</label>
+                <input type="text" name="LSTAT" id="LSTAT" required>
+            </div>
+
+            <button type="submit">Predict Price</button>
+        </form>
+
+        {% if prediction_text %}
+            <div class="result">
+                <h2>{{ prediction_text }}</h2>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
